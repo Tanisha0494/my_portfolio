@@ -1,4 +1,3 @@
-
 <?php get_header(); //include header.php ?>
 
 <main class="cf">
@@ -71,7 +70,5 @@
 	<?php endif;  //end THE LOOP ?>
 
 </main>
-
-<?php get_sidebar(); //include sidebar.php ?>
 
 <?php get_footer(); //include footer.php ?>

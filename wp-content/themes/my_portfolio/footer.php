@@ -1,6 +1,9 @@
-<footer>
+<footer class="cf">
+ 
+ <?php get_sidebar('foot'); ?>
 	
-  <?php wp_nav_menu( array(
+ <h2> Follow Me: </h2>
+ <?php wp_nav_menu( array(
          'theme_location'  => 'footer_nav', //one of the menu areas from functions.php (has to be spelled the same.)
          'container'     => 'nav', //div or nav
          'container_class' => 'fnav cf', 
@@ -8,6 +11,7 @@
          'menu_class'    => 'fmenu cf'
       ) ); ?>
 
+   
 </footer>
 
 <?php 

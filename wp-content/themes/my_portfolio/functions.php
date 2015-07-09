@@ -4,6 +4,8 @@ add_theme_support('post-thumbnails');
 
 add_theme_support('post-formats', array('gallery','video','image','quote'));
 
+add_image_size( 'work', 300, 300, true );
+
 /**
  * Turn on Menu Support
  *	@since 0.1
@@ -28,26 +30,40 @@ function remove_width_attribute( $html ) {
    return $html;
 }
 
-// add_action('widgets_init', 'cali_widgets');
+add_action('widgets_init', 'port_widgets');
 
-// function cali_widgets(){
-// 	register_sidebar(array(
-// 		'name' 			=> 'Blog Sidebar',
-// 		'id' 			=> 'blog-sidebar',
-// 		'description' 	=> 'Sidebar for the Blog',
-// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 		'after_widget' 	=> '</section>',
-// 		'before_title' 	=> '<h2>',
-// 		'after_title' 	=> '</h2>'
-// 		));
+function port_widgets(){
+	register_sidebar(array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'blog-sidebar',
+		'description' 	=> 'Sidebar for the Blog',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2>',
+		'after_title' 	=> '</h2>'
+		));
 
-// 	register_sidebar(array(
-// 		'name' 			=> 'Front Page Sidebar',
-// 		'id' 			=> 'front-page-sidebar',
-// 		'description' 	=> 'Sidebar for the Front page',
-// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 		'after_widget' 	=> '</section>',
-// 		'before_title' 	=> '<h2>',
-// 		'after_title' 	=> '</h2>'
-// 		));
-//}
+	register_sidebar(array(
+		'name' 			=> 'Front Page Sidebar',
+		'id' 			=> 'front-page-sidebar',
+		'description' 	=> 'Sidebar for the Front page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2>',
+		'after_title' 	=> '</h2>'
+		));
+		register_sidebar(array(
+		'name' 			=> 'Footer Sidebar',
+		'id' 			=> 'foot-sidebar',
+		'description' 	=> 'Sidebar for the Footer page',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2>',
+		'after_title' 	=> '</h2>'
+		));
+}
+
+function port_enqueue_script() {
+	wp_enqueue_script( 'jquery' );
+}
+add_action( 'wp_enqueue_scripts', 'port_enqueue_script' );

@@ -7,6 +7,9 @@
 
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
+<link rel=icon href="<?php bloginfo( 'stylesheet_directory' ); ?>/images/favi.ico" sizes="32x32" type="image/png">
+
+
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/styles/reset.css" />
 <?php 
 	//Necessary in <head> for JS and plugins to work. 
@@ -17,17 +20,17 @@
 
 <body <?php body_class('cf'); ?>>
 
-<section class="search cf"><?php get_search_form(); //includes searchform.php if it exists, if not, this outputs the default search bar ?></section>
+<section class="search cf">
+	<?php get_search_form(); //includes searchform.php if it exists, if not, this outputs the default search bar ?>
+</section>
 
 <header class="cf">
-<h1 class="hide"> <?php bloginfo('name'); ?></h1>
 
-<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"  title="<?php bloginfo( 'name' ) ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"></a></h1>
-
-<?php //wp_list_pages(array(
-					//'depth'        => 0,
-					//'title_li'     => __('Pages'), 
-//)) ?>
+<h1 class="logo">
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"  title="<?php bloginfo( 'name' ) ?>">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" />
+	</a>
+</h1>
 
 <?php wp_nav_menu( array(
 				'theme_location' 	=> 'main_nav', //one of the menu areas from functions.php (has to be spelled the same.)

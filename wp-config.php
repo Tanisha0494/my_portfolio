@@ -16,6 +16,8 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+if($_SERVER['HTTP_HOST'] == 'localhost'){
+
 define('DB_NAME', 'tr_portfolio');
 
 /** MySQL database username */
@@ -23,6 +25,23 @@ define('DB_USER', 'tr_portuser');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'bTdG46eqDr2WNRnT');
+
+define('WP_DEBUG', true);
+}
+
+else{
+
+define('DB_NAME', 'trose04_portfolio');
+
+/** MySQL database username */
+define('DB_USER', 'trose04_portuser');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'VNwDn29L30kc');
+
+define('WP_DEBUG', false);
+
+}
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -67,7 +86,7 @@ $table_prefix  = 'port_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+
 
 /* That's all, stop editing! Happy blogging. */
 
