@@ -54,9 +54,9 @@
 			}
 			else{
 			//pagenavi not available, use the standard wordpress navigation
-			previous_posts_link( '&larr; Newer Posts' );
+			previous_posts_link( '%link ', '%title >'  );
 
-			next_posts_link( 'Older Posts &rarr;' );
+			next_posts_link( '%link ', '%title >'  );
 
 			}
 			 ?>
